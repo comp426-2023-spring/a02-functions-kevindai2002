@@ -28,6 +28,12 @@ console.log(data);
 
 if (args.j) {
 	console.log(data);
+	if (!latitude) {
+		console.log("Latitude must be in range");
+	}
+	if (!longitude) {
+		console.log("Longitude must be in range.");
+	}
 	process.exit(0);
 }
 
