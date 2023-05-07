@@ -27,6 +27,9 @@ const data = await response.json();
 
 if (args.j) {
 	console.log(data);
+	if (!latitude) {
+		console.log("Latitude must be in range");
+	}
 	process.exit(0);
 }
 
