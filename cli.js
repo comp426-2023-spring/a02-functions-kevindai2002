@@ -38,7 +38,7 @@ if (days == 0) {
   console.log("in " + days + " days.")
 } else {
   console.log("tomorrow.")
-}
+} 
 
 if (data.daily.precipitation_hours[0] > 0) {
 	console.log("You might need your galoshes");
