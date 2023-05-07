@@ -27,15 +27,12 @@ const data = await response.json();
 
 if (args.j) {
 	console.log(data);
-	if (!latitude) {
-		console.log("Latitude must be in range");
-	}
 	process.exit(0);
 }
 
 const days = args.d;
 
-if (data.daily.precipitation_hours[0] > 0) {
+if (data.daily.precipitation_hours[days] > 0) {
 	console.log("You might need your galoshes");
 } else {
 	console.log("You will not need your galoshes");
