@@ -18,9 +18,9 @@ if (args.h) {
 	console.log("	-j		    Echo pretty JSON from open-meteo API and exit.");
 }
 
+const timezone = args.z || moment.tz.guess();
 const latitude = args.n || -args.s;
 const longitude = args.e || -args.w;
-const timezone = args.z || moment.tz.guess();
 
 const response = await fetch("https://api.open-meteo.com/v1/forecast?latitude=" + latitude + "&longitude=" + longitude + "&timezone=" + timezone+ "&daily=precipitation_hours");
 const data = await response.json();
@@ -30,7 +30,7 @@ if (args.j) {
 	process.exit(0);
 }
 
-const days = args.d 
+const days = args.d;
 
 if (data.daily.precipitation_hours[0] > 0) {
 	console.log("You might need your galoshes");
@@ -39,9 +39,9 @@ if (data.daily.precipitation_hours[0] > 0) {
 }
 
 if (days == 0) {
-  console.log("today.")
+  console.log("today.");
 } else if (days > 1) {
-  console.log("in " + days + " days.")
+  console.log("in " + days + " days.");
 } else {
-  console.log("tomorrow.")
+  console.log("tomorrow.");
 } 
