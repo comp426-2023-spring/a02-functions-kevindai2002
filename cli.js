@@ -32,26 +32,16 @@ if (args.j) {
 
 const days = args.d 
 
+if (data.daily.precipitation_hours[0] > 0) {
+	console.log("You might need your galoshes");
+} else {
+	console.log("You will not need your galoshes");
+}
+
 if (days == 0) {
   console.log("today.")
-  if (data.daily.precipitation_hours[0] > 0) {
-	console.log("You might need your galoshes");
-  } else {
-	console.log("You will not need your galoshes");
-  }
 } else if (days > 1) {
   console.log("in " + days + " days.")
-  if (data.daily.precipitation_hours[0] > 0) {
-	console.log("You might need your galoshes");
-  } else {
-	console.log("You will not need your galoshes");
-  }
 } else {
   console.log("tomorrow.")
-  if (data.daily.precipitation_hours[0] > 0) {
-	console.log("You might need your galoshes");
-  } else {
-	console.log("You will not need your galoshes");
-  }
 } 
-
