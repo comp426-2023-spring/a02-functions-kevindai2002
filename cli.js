@@ -30,9 +30,11 @@ if (args.j) {
 	console.log(data);
 	if (!latitude) {
 		console.log("Latitude must be in range");
+		process.exit(0);
 	}
 	if (!longitude) {
 		console.log("Longitude must be in range.");
+		process.exit(0);
 	}
 	process.exit(0);
 }
